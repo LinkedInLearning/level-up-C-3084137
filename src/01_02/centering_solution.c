@@ -5,15 +5,16 @@ void center_text(int width, char *text)
 {
 	int len,indent,s;
 
-	len = strlen(text);
-	indent = (width-len)/2;
-	for( s=0; s<indent; s++ )
+	len = strlen(text);			/* text length */
+	indent = (width-len)/2;		/* spaces required to indent */
+	for( s=0; s<indent; s++ )	/* indent */
 		putchar(' ');
-	printf("%s\n",text);
+	printf("%s\n",text);		/* output string */
 }
 
 int main()
 {
+	/* some sample text to center */
 	char *title[] = {
 	   "March Sales",
 	   "My First Project",
@@ -22,8 +23,10 @@ int main()
 	};
 	int x;
 
+	/* output each of the strings, centered */
 	for( x=0; x<4; x++ )
 	{
+		/* assume the screen width to be 80 characters */
 		center_text( 80, title[x] );
 	}
 

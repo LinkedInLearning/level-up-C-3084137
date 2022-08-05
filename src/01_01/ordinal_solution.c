@@ -21,6 +21,7 @@ int main()
 {
 	int c;
 
+	/* output a table of 100 numbers */
 	for( c=1; c<=20; c++ )
 	{
 		printf("%3d%s\t%3d%s\t%3d%s\t%3d%s\t%3d%s\n",

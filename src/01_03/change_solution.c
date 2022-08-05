@@ -15,29 +15,23 @@ int main()
 		printf("Making change for: $%.2f\n",amount[x]);
 		/* use integers for looping */
 		coins = amount[x] * 100;
-		while( coins )
+		while( coins >= 25 )
 		{
-			if( coins >= 25 )
-			{
-				quarters++;
-				coins -= 25;
-			}
-			else if( coins >= 10 )
-			{
-				dimes++;
-				coins -= 10;
-			}
-			else if( coins >= 5 )
-			{
-				nickels++;
-				coins -= 5;
-			}
-			else
-			{
-				pennies++;
-				coins--;
-			}
+			quarters++;
+			coins -= 25;
 		}
+		while( coins >= 10 )
+		{
+			dimes++;
+			coins -= 10;
+		}
+		while( coins >= 5 )
+		{
+			nickels++;
+			coins -= 5;
+		}
+		pennies = coins;
+
 		printf("\t%d quarters, %d dimes, %d nickels, %d pennies\n",
 				quarters,
 				dimes,
