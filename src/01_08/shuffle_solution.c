@@ -18,7 +18,7 @@ int main()
 		"A Change Is Gonna Come"
 	};
 	int frequency[PSIZE];
-	int recent[RSIZE];
+	int recent[RSIZE];		/* holds recently-played songs */
 	int x,r,count,found;
 
 	/* initialize */
@@ -34,19 +34,24 @@ int main()
 	count = 0;
 	while(count<100)
 	{
-		/* does r appear in recent[]? */
+		/* does r appear in the recent[] list? */
 		found = 1;				/* assume it does */
 		while(found)
 		{
-			r = rand() % PSIZE;		/* random value */
+			r = rand() % PSIZE;		/* random song from the list */
 			found = 0;				/* not found yet */
+			/* see if the song was recently-played */
 			for(x=0;x<RSIZE;x++)
 			{
 				if( r==recent[x] )
 					found=1;		/* found! */
 			}
+			/* found==0 here if the song isn't in the
+			   recently-played list */
 		}
-		recent[count%RSIZE] = r;		/* play the song */
+		/* add the song to the recently-played list */
+		recent[count%RSIZE] = r;		
+		/* play the song */
 		printf("%3d: Now Playing '%s'\n",
 				count+1,
 				playlist[r]

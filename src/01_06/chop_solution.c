@@ -58,7 +58,7 @@ char *mid(char *s,int offset, int len)
 	/* copy the string */
 	for(x=0;x<len;x++)
 	{
-		*(buf+x) = *(s+offset-1+x);	/* subtract 1 to start with 0 */
+		*(buf+x) = *(s+offset+x);	/* remember, offset 0 is the string start */
 		if( *(buf+x)=='\0')		/* avoid overflow */
 			break;
 	}
@@ -74,7 +74,7 @@ int main()
 	printf("Original string: %s\n",string);
 	printf("Left %d characters: %s\n",16,left(string,16));
 	printf("Right %d characters: %s\n",18,right(string,18));
-	printf("Middle %d characters: %s\n",11,mid(string,13,11));
+	printf("Middle %d characters: %s\n",11,mid(string,12,11));
 
 	return(0);
 }
