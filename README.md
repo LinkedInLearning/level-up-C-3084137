@@ -1,5 +1,5 @@
 # Level Up: C 
-This is the repository for the LinkedIn Learning course Level Up: C . The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course Level Up: C. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![Level Up: C ][lil-thumbnail-url]
 
