@@ -21,15 +21,15 @@ int main()
 
     for (int i = 0; i < 4; i++)
     {
-      //printf("  Changing $%.2f...\n", coin_val_in_pennies[i] / 100.0);
+      // printf("  Changing $%.2f...\n", coin_val_in_pennies[i] / 100.0);
       while (change >= coin_val_in_pennies[i])
       {
         coin_count[i]++;
         change -= coin_val_in_pennies[i];
-        //printf("    Left: $%.2f\n", change / 100.0);
+        // printf("    Left: $%.2f\n", change / 100.0);
       }
     }
-    printf(" DONE -- $%.2f changed to: %d quarters, %d dimes, %d nickels, %d pennies\n",
-           amount[x], coin_count[0], coin_count[1], coin_count[2], coin_count[3]);
+    printf(" DONE -- Changed to: %d quarters, %d dimes, %d nickels, %d pennies\n",
+           coin_count[0], coin_count[1], coin_count[2], coin_count[3]);
   }
 }
