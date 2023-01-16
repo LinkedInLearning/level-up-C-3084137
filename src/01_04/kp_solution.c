@@ -29,4 +29,6 @@ int main()
   }
   printf("\n");
   printf("Length: %d\n", count);
+
+  return (0);
 }
