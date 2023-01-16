@@ -31,8 +31,8 @@ int main()
   int today_num = time.tm_mday;
   int this_year_num = time.tm_year + 1900;
 
-  this_month_num = 11;
-  today_num = 27;
+  // this_month_num = 11;
+  // today_num = 27;
 
   days_in_month[1] = february(time.tm_year + 1900);
 
