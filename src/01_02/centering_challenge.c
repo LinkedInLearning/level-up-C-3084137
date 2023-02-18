@@ -1,12 +1,16 @@
 #include <stdio.h>
-
+#include <string.h>
 void center_text(int width, char *text)
 {
-	/*
-	   - write this function to complete the challenge
-	   - this code won't run until the function is
-	   written
-	*/
+int b=strlen(text);
+for(int i=1; i<=(width/2)-(b/2) ;i++)
+{
+	printf(" ");
+	
+}
+
+printf("%s",text);
+printf("\n");
 }
 
 int main()
