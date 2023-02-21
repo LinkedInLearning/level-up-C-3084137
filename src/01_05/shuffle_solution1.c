@@ -22,7 +22,7 @@ int main()
 		}
 		shuffle[s] = '\0';		/* cap the string */
 		count++;
-		printf("%2d: %s\n",count,shuffle);
+		printf("%2.2d: %s\n",count,shuffle);
 		/* stop if the deck is restored */
 		if( strcmp(original,shuffle)==0 )
 			break;
