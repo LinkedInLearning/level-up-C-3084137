@@ -1,48 +1,50 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define PSIZE 20
-
-int main()
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#define R 7
+#define P 15
+void main()
 {
-	char *playlist[PSIZE] = {
-		"Like a Rolling Stone", "Satisfaction", "Imagine",
-		"What's Going On", "Respect", "Good Vibrations",
-		"Johnny B. Goode", "Hey Jude", "What'd I Say",
-		"Smells Like Teen Spirit", "My Generation",
-		"Yesterday", "Blowin' in the Wind", "Purple Haze",
-		"London Calling", "I Want to Hold Your Hand",
-		"Maybellene", "Hound Dog", "Let It Be",
-		"A Change Is Gonna Come"
-	};
-	int frequency[PSIZE];
-	int x,r,count;
+	char *song[P]={"O RE PIYA", "TUM MERE SANAM", "WHY ARE YOU GAY",
+	"MAHABHARAT", "TITAL SOND", "ZINGAAT", "BEGGIN", "BABY", 
+	"SATURDAY ", "SHIVBA RAJ", "KRISHNA SONG", "GANPATI SONG", "RAP SONG",
+	"I WANNA BE YOUR SLAVE", "BREATHLESS"};
 
-	/* initialize */
-	srand( (unsigned)time(NULL) );
-	for(x=0;x<PSIZE;x++)
-		frequency[x] = 0;
+	char repeat[R]; // This is to song must'n repeat until next 7 song (R)
 
+	int play,count,x;
+	srand((unsigned)time(0)); // To make every time random song 
+	for(x=0;x<R;x++)
+	repeat[x]=-1;			// (R) -1 mean NULL
+	int r,frequency[P],done;
+	for(x=0;x<P;x++)
+	frequency[x]=0;
 
-	/* run through the playlist randomly */
-	puts("Playlist:");
-	count = 0;
+	count=0;
 	while(count<100)
 	{
-		/* does r appear in recent[]? */
-		r = rand() % PSIZE;		/* random value */
-		printf("%3d: Now Playing '%s'\n",
-				count+1,
-				playlist[r]
-			  );
+		done=1;
+		while(done)
+		{
+			done=0;
+		r=rand()%P;
+		for(x=0;x<R;x++)
+		{
+		if(r==repeat[x])
+		done=1;
+		}
+		}
+		repeat[count%R]=r;		//if done = 1 then that song added to repeat list 
+		printf("%d\tNow Playing : %s \n",count+1,song[r]);
 		frequency[r]++;
+
+		count++;
+		
+	}
+count=0;
+	while(count<P)
+	{
+		printf("\n%2.2d\t%s\t\t%d",count+1,song[count],frequency[count]);
 		count++;
 	}
-
-	puts("Song frequency:");
-	for(x=0;x<PSIZE;x++)
-		printf("%s: %d\n",playlist[x],frequency[x]);
-
-	return(0);
 }
