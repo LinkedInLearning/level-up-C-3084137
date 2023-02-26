@@ -39,7 +39,7 @@ int move(void)
 {
 	int r;
 
-	r = (rand() % 3) - 1;
+	r = (rand() % 3) -1;
 	return(r);
 }
 
@@ -63,7 +63,7 @@ int escaped(struct loc k)
 int main()
 {
 	int turn = 0;
-	struct loc king = { 3, 4};		/* fourth row, fifth column */
+	struct loc king = { 4,3};		/* fourth row, fifth column */
 
 	/* seed randomizer */
 	srand( (unsigned)time(NULL) );
