@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
+
 
 /* the structure proves to be more flexible than
    creating a two-dimensional array. Arrays in C
@@ -79,6 +81,7 @@ void rotate_matrix(struct matrix *g)
 			   sequentially using variable 'i' */
 			*(r->cells+i) = *(g->cells+(g->cols*y)+x);
 			i++;
+		
 		}
 	}
 
